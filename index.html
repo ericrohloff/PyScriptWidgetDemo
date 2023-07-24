@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WidgetWeb</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.03.1/pyscript.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/ace-builds@1.23.0/src-min-noconflict/ace.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Calls respective .js and .py files for the webpage -->
+    <py-config src="./set.toml"></py-config>
+    <py-script src="./run_code.py"></py-script>
+    <py-script src="./spawn.py"></py-script>
+    <py-script src="./widget_mover.py"></py-script>
+    <py-script src="./repl_toggle.py"></py-script>
+    <script src="open_repl.js"></script>
+    <script src="create_new.js"></script>
+    <!--script src="repl_toggler.js"></script-->
+
+    <!-- Adds header to the page -->
+    <header>
+      <div id="header">WidgetWeb</div>
+      <div class="header-buttons">
+        <div class="dropdown">
+          <button class="dropbtn">Widgets</button>
+          <div class="dropdown-content">
+            <a href="#" py-click="create_button()">Button</a>
+            <a href="#" py-click="create_graph()">Graph</a>
+            <a href="#" onclick="callFunction3()">Sound</a>
+            <a href="#" onclick="callFunction4()">Serial</a>
+            <a href="#" py-click="create_video()">Video</a>
+            <a href="#" py-click="create_text()">Text</a>
+            <a href="#" py-click="create_repl()">REPL</a>
+          </div>
+        </div>
+      </header>
+
+    <!-- Creates Widget for REPL  >
+    <div id = "replWidgetContainer">
+      <div id = "replWidget">
+        <div id = "toggler" py-click = "repl_toggle()">REPL</div>
+        <div id = "mode" py-click = "mode_toggle()">MODE</div>
+        <div class="box2" id="replmove"></div>
+        <div id = "repl_repl" class="triangle" onclick="openEditor()"></div>
+      </div>
+      <div id="repl">
+        <div id="console" tabindex="0" class = 'SPrepl'></div>
+      </div>
+      <div id="repl2">
+        <py-terminal></py-terminal>
+      </div>
+    </div-->
+
+    <!-- Adds editor to the page on button click-->
+    <div id="editorOverlay" class="overlay" style="display: none">
+      <div id="editor" style="display: none">
+        <!-- Inputs in the ace editor -->
+        <pre id="aceEditor"></pre>
+      </div>
+      <!-- Adds buttons to the Editor-->
+      <div id="runButton" style="display: none" py-click="runCode()">Run</div>
+      <div id="closeButton" style="display: none" onclick="closeEditor()">
+        Exit
+      </div>
+    </div>
+  </body>
+</html>
