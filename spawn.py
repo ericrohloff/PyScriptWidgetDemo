@@ -2,12 +2,18 @@ import js
 from js import console, document
 from widget_mover import WidgetMover
 from repl_toggle import replModeToggle
-from pyodide.ffi.wrappers import add_event_listener
-
 
 a = 0
 i = 0
 j = 0
+e = 0
+f = 0
+
+
+def create_slider():
+    var = slider_check()
+    js.summon_slider(var)
+    WidgetMover("sliderWidget" + str(var), "sliderMove" + str(var))
 
 
 def create_button():
@@ -32,6 +38,12 @@ def create_repl():
     WidgetMover("replWidgetContainer" + str(var), "replMove" + str(var))
 
 
+def create_checkbox():
+    var = checkbox_check()
+    js.summon_checkbox(var)
+    WidgetMover("checkboxWidget" + str(var), "checkboxMove" + str(var))
+
+
 def button_check():
     global i
     i = i+1
@@ -48,3 +60,15 @@ def repl_check():
     global a
     a = a+1
     return a
+
+
+def slider_check():
+    global e
+    e = e+1
+    return e
+
+
+def checkbox_check():
+    global f
+    f = f+1
+    return f
