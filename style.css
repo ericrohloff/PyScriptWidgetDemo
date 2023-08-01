@@ -114,12 +114,12 @@ header a {
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
+  top: 5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
   background-color: #333;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -254,17 +254,16 @@ ul li {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: red;
+  background-color: rgb(238, 77, 77);
   color: white;
   border-style: solid;
   border-radius: 50%;
-  border-color: black;
-  border-width: 1px;
+  border-color: whitesmoke;
+  border-width: 2px;
   font-size: 20px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  resize: hor;
 }
 
 .buttonWidget {
@@ -272,7 +271,7 @@ ul li {
   left: 0px;
   width: 120px;
   height: 120px;
-  background-color: lightblue;
+  background-color: rgb(174, 135, 253);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,28 +344,26 @@ ul li {
 }
 
 .replWidgetMove {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   position: absolute;
   background-color: #333;
-  bottom: 10px;
-  right: 10px;
+  bottom: 5px;
+  right: 5px;
   border-radius: 3px;
   cursor: move;
-  top: 22px;
 }
 
 .replWidgetRepl {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 5px;
+  left: 5px;
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #333;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #333;
   border-radius: 3px;
-  top: 30px;
 }
 
 .replToggler {
@@ -423,4 +420,203 @@ ul li {
   color: white;
   background-color: black;
   border: 1px solid #ccc;
+  position: relative;
+}
+
+.py-terminal-docked {
+  display: none;
+}
+
+/* SLIDER WIDGET */
+.sliderWidget {
+  width: 300px;
+  height: 75px;
+  top: 50px;
+  background-color: #ecddec;
+  position: absolute;
+  resize: horizontal;
+  overflow: auto;
+  z-index: 0;
+  border-radius: 10%;
+  display: flex;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+/* ADAFRUIT WIDGET */
+#AdaWidget {
+  width: 120px;
+  top: 50px;
+  background-color: #ff79ff;
+  image-align: center;
+  position: absolute;
+  resize: horizontal;
+  overflow: auto;
+  z-index: 0;
+  border-radius: 10%;
+  display: none;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.inputCont {
+  text-align: center;
+  position: fixed;
+  padding: 20px;
+  display: grid;
+  row-gap: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  height: 70vh;
+  background-color: #444;
+  grid-template-rows: repeat(4, 1fr);
+  font-family: monospace;
+  z-index: 5;
+}
+
+.inputCells {
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  text-align: left;
+  align-items: bottom;
+  font-size: 16px;
+}
+
+div#AdaWindow input[type="text"] {
+  position: relative;
+  width: 90%;
+  height: 45%;
+}
+
+div#AdaWindow input[type="button"] {
+  position: relative;
+  width: 35%;
+  height: 45%;
+}
+
+div#AdaWindow span {
+  max-width: 90%;
+  max-height: 35px;
+  overflow: auto;
+  margin: 0px;
+}
+
+.infoButton {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  bottom: 7px;
+  left: 7px;
+}
+
+/* Slider Widget Styles */
+
+.sliderWidget {
+  width: 500px;
+  height: 75px;
+  top: 50px;
+  background-color: #ecddec;
+  position: absolute;
+  overflow: auto;
+  z-index: 0;
+  border-radius: 10px;
+  display: flex;
+  resize: none;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* Checkbox Widget Styles */
+
+.checkboxWidget {
+  width: 200px;
+  height: 50px;
+  top: 50px;
+  background-color: #ecddec;
+  position: absolute;
+  overflow: auto;
+  justify-content: center;
+  z-index: 0;
+  border-radius: 10px;
+  display: flex;
+}
+
+.checkbox {
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.check1box {
+  width: 25px;
+  height: 25px;
+  top: 40px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+  position: below;
+}
+
+.check2box {
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+  position: below;
 }

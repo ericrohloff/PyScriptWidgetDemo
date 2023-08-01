@@ -19,12 +19,19 @@ function summon_button(value) {
     triangleIcon.id = "triangleIcon" + i;
     triangleIcon.className = "triangle";
     triangleIcon.onclick = openEditor;
+
+    closeIcon = document.createElement("div");
+    closeIcon.id = "closeButtonIcon" + i;
+    closeIcon.className = "close";
+    closeIcon.onclick = closeWidget;
+
     
     document.body.appendChild(buttonWidget);
     buttonWidget.appendChild(buttonMove);
     buttonWidget.appendChild(triangleIcon);
     buttonWidget.appendChild(button);
-  }
+    buttonWidget.appendChild(closeIcon);
+}
 
 function summon_text(value) {
     let i = value;
@@ -48,10 +55,16 @@ function summon_text(value) {
     triangleIcon.className = "triangle";
     triangleIcon.onclick = openEditor;
 
+    closeIcon = document.createElement("div");
+    closeIcon.id = "closeTextIcon" + i;
+    closeIcon.className = "close";
+    closeIcon.onclick = closeWidget;
+
     document.body.appendChild(textWidget);
     textWidget.appendChild(textMove);
     textWidget.appendChild(triangleIcon);
     textWidget.appendChild(textArea);
+    textWidget.appendChild(closeIcon);
 }
 
 function summon_repl(value){
@@ -70,6 +83,10 @@ function summon_repl(value){
     replToggler.className = "replToggler";
     replToggler.innerHTML = "REPL";
 
+    closeIcon = document.createElement("div");
+    closeIcon.id = "closeIcon" + i;
+    closeIcon.className = "close";
+    closeIcon.onclick = closeWidget;
 
     replMode = document.createElement("div");
     replMode.id = "replMode" + i;
@@ -100,11 +117,10 @@ function summon_repl(value){
 
     terminal = document.createElement("py-terminal");
 
-
-
     document.body.appendChild(replWidgetContainer);
     replWidgetContainer.appendChild(replWidget);
     replWidget.appendChild(replMove);
+    replWidget.appendChild(closeIcon);
     replWidget.appendChild(triangleIcon);
     replWidget.appendChild(replToggler);
     replWidget.appendChild(replMode);
@@ -114,21 +130,84 @@ function summon_repl(value){
     replSub2Widget.appendChild(terminal);
 }
 
-function summon_ada(value){
+function summon_slider(value){
+    let i = value;
+
+    sliderWidget = document.createElement("div");
+    sliderWidget.id = "sliderWidget" + i;
+    sliderWidget.className = "sliderWidget";
+
+    slider = document.createElement("input");
+    slider.id = "slider" + i;
+    slider.className = "slider";
+    slider.type = "range";
+    slider.min = "0";
+    slider.max = "100";
+    slider.value = "50";
+
+    sliderMove = document.createElement("div");
+    sliderMove.id = "sliderMove" + i;
+    sliderMove.className = "box2";
     
+    triangleIcon = document.createElement("div");
+    triangleIcon.id = "triangleIcon" + i;
+    triangleIcon.className = "triangle";
+    triangleIcon.onclick = openEditor;
 
+    closeIcon = document.createElement("div");
+    closeIcon.id = "closeSliderIcon" + i;
+    closeIcon.className = "close";
+    closeIcon.onclick = closeWidget;
 
-
-
-
+    document.body.appendChild(sliderWidget);
+    sliderWidget.appendChild(sliderMove);
+    sliderWidget.appendChild(triangleIcon);
+    sliderWidget.appendChild(slider);
+    sliderWidget.appendChild(closeIcon);
 }
 
+function summon_checkbox(value){
+    let i = value;
 
+    checkboxWidget = document.createElement("div");
+    checkboxWidget.id = "checkboxWidget" + i;
+    checkboxWidget.className = "checkboxWidget";
 
+    checkbox = document.createElement("input");
+    checkbox.id = "1checkbox" + i;
+    checkbox.className = "checkbox";
+    checkbox.type = "checkbox";
 
+    check1box = document.createElement("input");
+    check1box.id = "check1box" + i;
+    check1box.className = "check1box"; 
+    check1box.type = "checkbox";
 
+    check2box = document.createElement("input");
+    check2box.id = "check2box" + i;
+    check2box.className = "check2box";
+    check2box.type = "checkbox";
 
-
-
+    checkboxMove = document.createElement("div");
+    checkboxMove.id = "checkboxMove" + i;
+    checkboxMove.className = "box2";
     
-        
+    triangleIcon = document.createElement("div");
+    triangleIcon.id = "triangleIcon" + i;
+    triangleIcon.className = "triangle";
+    triangleIcon.onclick = openEditor;
+
+    closeIcon = document.createElement("div");
+    closeIcon.id = "closeCheckboxIcon" + i;
+    closeIcon.className = "close";
+    closeIcon.onclick = closeWidget;
+
+    document.body.appendChild(checkboxWidget);
+    checkboxWidget.appendChild(checkboxMove);
+    checkboxWidget.appendChild(triangleIcon);
+    checkboxWidget.appendChild(checkbox);
+    checkboxWidget.appendChild(check1box);
+    checkboxWidget.appendChild(check2box);
+    checkboxWidget.appendChild(closeIcon);
+}
+
